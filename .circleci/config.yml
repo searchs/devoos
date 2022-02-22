@@ -40,4 +40,4 @@ workflows:
       - print_allo
       - print_aye:
           requires:
-            - one
+            - print_allo
