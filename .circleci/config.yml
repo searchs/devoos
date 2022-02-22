@@ -6,6 +6,13 @@ version: 2.1
 orbs:
   node: circleci/node@4.7
 
+# Udas Jobs section
+jobs:
+  build:
+    executor:
+      name: print_allo
+      tag: '0.0.1'
+
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
 workflows:
