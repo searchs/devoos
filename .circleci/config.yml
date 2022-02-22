@@ -37,3 +37,5 @@ workflows:
           version: '16.10'
           # If you are using yarn, change the line below from "npm" to "yarn"
           pkg-manager: npm
+      - print_allo
+      - print_aye
