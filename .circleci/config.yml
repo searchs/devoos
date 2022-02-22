@@ -12,15 +12,13 @@ jobs:
     docker:
       - image: circleci/node:13.8.0
     steps:
-      - checkout
       - run: echo "First Allo "
-      - run: sleep 3
+      - run: sleep 2
 
   print_aye:
     docker:
       - image: circleci/node:13.8.0
     steps:
-      - checkout
       - run: echo "Just Aye "
       - run: echo "Done for now"
 
