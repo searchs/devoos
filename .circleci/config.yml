@@ -21,7 +21,7 @@ jobs:
       - image: circleci/node:13.8.0
     steps:
       - checkout
-      - run: echo "First Aye "
+      - run: echo "Just Aye "
       - run: echo "Done for now"
 
 # Invoke jobs via workflows
