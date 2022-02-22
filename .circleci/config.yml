@@ -8,10 +8,21 @@ orbs:
 
 # Udas Jobs section
 jobs:
-  build:
-    executor:
-      name: print_allo
-      tag: '0.0.1'
+  print_allo:
+    docker:
+      - image: circleci/node:13.8.0
+    steps:
+      - checkout
+      - run: echo "First Allo "
+      - run: sleep 10
+
+  print_aye:
+    docker:
+      - image: circleci/node:13.8.0
+    steps:
+      - checkout
+      - run: echo "First Aye "
+      - run: echo "Done for now"
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
