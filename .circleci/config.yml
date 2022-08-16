@@ -8,11 +8,11 @@ orbs:
 
 # Udas Jobs section
 jobs:
-  print_allo:
+  print_udas:
     docker:
       - image: circleci/node:13.8.0
     steps:
-      - run: echo "First Allo "
+      - run: echo "Udas People "
       - run: sleep 2
 
   print_aye:
@@ -35,7 +35,7 @@ workflows:
           version: '16.10'
           # If you are using yarn, change the line below from "npm" to "yarn"
           pkg-manager: npm
-      - print_allo
+      - print_udas
       - print_aye:
           requires:
-            - print_allo
+            - print_udas
