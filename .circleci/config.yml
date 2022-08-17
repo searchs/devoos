@@ -4,20 +4,20 @@ version: 2.1
 # Orbs are reusable packages of CircleCI configuration that you may share across projects, enabling you to create encapsulated, parameterized commands, jobs, and executors that can be used across multiple projects.
 # See: https://circleci.com/docs/2.0/orb-intro/
 orbs:
-  node: circleci/node@4.7
+  node: circleci/node
 
 # Udas Jobs section
 jobs:
   print_udas:
     docker:
-      - image: circleci/node:13.8.0
+      - image: circleci/node:14.0.0
     steps:
       - run: echo "Udas People "
       - run: sleep 2
 
   print_aye:
     docker:
-      - image: circleci/node:13.8.0
+      - image: circleci/node:14.0.0
     steps:
       - run: echo $(date)
       - run: echo "Just Aye "
@@ -33,7 +33,7 @@ workflows:
           # This is the node version to use for the `cimg/node` tag
           # Relevant tags can be found on the CircleCI Developer Hub
           # https://circleci.com/developer/images/image/cimg/node
-          version: '16.10'
+          version: '16.16'
           # If you are using yarn, change the line below from "npm" to "yarn"
           pkg-manager: npm
       - print_udas
