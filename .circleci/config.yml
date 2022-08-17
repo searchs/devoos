@@ -59,4 +59,9 @@ workflows:
           requires:
             - print_udas
       - build
+  
+  test-env-var:
+    jobs:
       - env_shares
+
+      
