@@ -8,17 +8,24 @@ orbs:
 
 # Udas Jobs section
 jobs:
+  env_shares:
+    docker:
+      - image: cimg/base:2020.01
+    steps:
+      - checkout
+      - run:
+          name: "echo an ENV that is part of our project"
+          command: |
+            echo $MAIN_USER
   build:
     docker:
       - image: circleci/node:latest
     environment:
       CIRCLE_COMPARE_URL: << pipeline.project.git_url >>/compare/<< pipeline.git.base_revision >>..<<pipeline.git.revision>>
-      MAIN_USER: << pipeline.MAIN_USER >>
     working_directory: ~/main
     steps:
       - run: echo "This is pipeline ID << pipeline.id >>"
       - run: echo $CIRCLE_COMPARE_URL
-      - run: echo $MAIN_USER
   print_udas:
     docker:
       - image: circleci/node:14.0.0
@@ -52,3 +59,4 @@ workflows:
           requires:
             - print_udas
       - build
+      - env_shares
