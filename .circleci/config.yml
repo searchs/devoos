@@ -17,6 +17,7 @@ jobs:
     steps:
       - run: echo "This is pipeline ID << pipeline.id >>"
       - run: echo $CIRCLE_COMPARE_URL
+      - run: echo $MAIN_USER 
   print_udas:
     docker:
       - image: circleci/node:14.0.0
