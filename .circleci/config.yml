@@ -13,11 +13,12 @@ jobs:
       - image: circleci/node:latest
     environment:
       CIRCLE_COMPARE_URL: << pipeline.project.git_url >>/compare/<< pipeline.git.base_revision >>..<<pipeline.git.revision>>
+      MAIN_USER: << pipeline.MAIN_USER >>
     working_directory: ~/main
     steps:
       - run: echo "This is pipeline ID << pipeline.id >>"
       - run: echo $CIRCLE_COMPARE_URL
-      - run: echo $MAIN_USER 
+      - run: echo $MAIN_USER
   print_udas:
     docker:
       - image: circleci/node:14.0.0
