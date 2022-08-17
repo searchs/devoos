@@ -19,6 +19,7 @@ jobs:
     docker:
       - image: circleci/node:13.8.0
     steps:
+      - run: echo $(date)
       - run: echo "Just Aye "
       - run: echo "Done for now"
 
